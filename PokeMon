@@ -1,0 +1,38 @@
+using System;
+
+namespace Poke_Mon
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int N = int.Parse(Console.ReadLine());
+            int M = int.Parse(Console.ReadLine());
+            int Y = int.Parse(Console.ReadLine());
+            int newN = 0;
+            int counterOfTrack=0;
+            int remaind = 0;
+            double fiftyPersond = N * 0.5;
+            while(N>=M)
+            {
+                newN= N - M;
+                counterOfTrack++;
+                if ((newN ==fiftyPersond)&&(Y!=0))
+                {
+                    newN = newN / Y;
+                    remaind = newN;
+                    N = newN;
+                }
+                else
+                {
+                    remaind = newN;
+                    N = newN;
+                }
+            }
+            Console.WriteLine(remaind);
+            Console.WriteLine(counterOfTrack);
+
+
+        }
+    }
+}
